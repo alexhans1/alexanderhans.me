@@ -5,6 +5,6 @@
 
   },
   "scripts": {
-//    "deploy":
+    "deploy": "surge ./ alexanderhans.me"
   }
 }
