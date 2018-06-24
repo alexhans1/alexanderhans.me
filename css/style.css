@@ -10,6 +10,17 @@
   background-size: cover;
 }
 
+#block_1 img {
+  height: 50%;
+  width: auto;
+  margin-top: 160px;
+  cursor: pointer;
+}
+
+/*-------------------------*/
+/*--------- CONTENT--------*/
+/*-------------------------*/
+
 .content-container {
   flex-flow: wrap;
   box-shadow: 0 0 13px 4px #c5c5c5;
@@ -17,10 +28,10 @@
 
 .block {
   width: 100%;
+  overflow: hidden;
 }
 
 .block-container {
-  height: 1000px;
   width: 33.33333%;
 }
 
@@ -31,17 +42,22 @@
 }
 
 #block_2 {
-  background-color: #f5f5f5;
+  background: url("../images/PSD2_writing.png") no-repeat center center;
+  background-size: cover;
   height: 500px;
 }
 
 #block_3 {
+  background: url("../images/debate_now.png") no-repeat center center;
+  background-size: 80%;
   background-color: #F6F6F6;
   height: 750px;
 }
 
 #block_4 {
-  background-color: #eae7d1;
+  background: url("../images/lissajous_2666x1500.png") no-repeat center center;
+  background-size: cover;
+  background-color: #EDE6DE;
   height: 250px;
 }
 
@@ -51,6 +67,8 @@
 }
 
 #block_6 {
+  background: url("../images/train_times.png") no-repeat center center;
+  background-size: 85%;
   background-color: #fff7df;
   height: 750px;
   box-shadow: 0 0 12px 2px #cac3b0;
@@ -63,6 +81,8 @@
 }
 
 #block_8 {
+  background: url("../images/alexa_small.png") no-repeat center center;
+  background-size: cover;
   background-color: #F0E7E2;
   height: 250px;
 }
@@ -70,6 +90,14 @@
 @media screen and (max-width: 768px) {
   .block-container {
     width: 100% !important;
+  }
+
+  #block_4 {
+    height: 400px;
+  }
+
+  #block_5 {
+    display: none;
   }
 }
 
@@ -99,4 +127,16 @@
   .container-fluid {
     max-width: 1640px;
   }
+}
+
+/*-------------------------*/
+/*--------- CONTENT--------*/
+/*-------------------------*/
+#block_1 .modal img {
+  width: 100% !important;
+  margin-top: 0 !important;
+}
+
+#block_1 .modal-body {
+  padding-top: 0;
 }
