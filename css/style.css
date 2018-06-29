@@ -30,19 +30,6 @@ a:hover {
   background-size: cover;
 }
 
-#header_underline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-  background: url(../images/header-background_underline.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 #header > .clickDiv {
   position: fixed;
   width: 380px;
@@ -124,13 +111,10 @@ a:hover {
 }
 
 #block_5 {
-  background: url("../images/about_me.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: #ffffff;
+  background: url("../images/share_and_compare.png") no-repeat center center;
+  background-size: 70%;
+  background-color: #fff6ed;
   height: 250px;
-}
-#block_5 > div > p {
-  font-size: 1.5rem;
 }
 
 #block_6 {
