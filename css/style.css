@@ -30,8 +30,20 @@ a:hover {
   background-size: cover;
 }
 
+#header_underline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url(../images/header-background_underline.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #header > .clickDiv {
-  cursor: unset;
   position: fixed;
   width: 380px;
   max-width: 80vw;

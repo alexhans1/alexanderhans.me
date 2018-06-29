@@ -25,8 +25,9 @@
 <body>
 
 
+<div id="header_underline" class="mb-3 d-none"></div>
 <div id="header" class="mb-3">
-  <div class="clickDiv mt-5" onclick="toggleModal('#cv')"></div>
+  <div id="header_cv_click" class="clickDiv mt-5" onclick="toggleModal('#cv')"></div>
 </div>
 
 <div class="container-fluid">
@@ -530,52 +531,62 @@
         crossorigin="anonymous"></script>
 
 <!--VIMEO CONTROLS-->
-<!--<script src="https://player.vimeo.com/api/player.js"></script>-->
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script type="application/javascript">
 
 $(document).ready(function() {
-  // const iframe = document.querySelector('iframe');
-  // const player = new Vimeo.Player(iframe);
+  const iframe = document.querySelector('iframe');
+  const player = new Vimeo.Player(iframe);
 
   // listen to bankathon modal being closed or inactive
   // pause video if so
-  // const observer = new MutationObserver(function(mutations) {
-  //   mutations.forEach(function(mutation) {
-  //     if (mutation.attributeName === "class") {
-  //       const attributeValue = $(mutation.target).prop(mutation.attributeName);
-  //       if (
-  //         (attributeValue.includes('carousel-item') && !attributeValue.includes('active'))
-  //         || (attributeValue.includes('modal') && !attributeValue.includes('show'))
-  //       ) {
-  //         player.pause().then(function() {
-  //           console.info('the video was paused');
-  //         }).catch(function(error) {
-  //           switch (error.name) {
-  //             case 'PasswordError':
-  //               console.error('the video is password-protected and the viewer needs to enter the password first');
-  //               break;
-  //
-  //             case 'PrivacyError':
-  //               console.error('the video is private');
-  //               break;
-  //
-  //             default:
-  //               console.error('some other error occurred');
-  //               break;
-  //           }
-  //         });
-  //       }
-  //     }
-  //   });
-  // });
-  // const video = $("#bankathon_iframe_container");
-  // observer.observe(video[0], {
-  //   attributes: true
-  // });
-  // const bankathon_modal = $("#bankathon");
-  // observer.observe(bankathon_modal[0], {
-  //   attributes: true
-  // });
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === "class") {
+        const attributeValue = $(mutation.target).prop(mutation.attributeName);
+        if (
+          (attributeValue.includes('carousel-item') && !attributeValue.includes('active'))
+          || (attributeValue.includes('modal') && !attributeValue.includes('show'))
+        ) {
+          player.pause().then(function() {
+            console.info('the video was paused');
+          }).catch(function(error) {
+            switch (error.name) {
+              case 'PasswordError':
+                console.error('the video is password-protected and the viewer needs to enter the password first');
+                break;
+
+              case 'PrivacyError':
+                console.error('the video is private');
+                break;
+
+              default:
+                console.error('some other error occurred');
+                break;
+            }
+          });
+        }
+      }
+    });
+  });
+  const video = $("#bankathon_iframe_container");
+  observer.observe(video[0], {
+    attributes: true
+  });
+  const bankathon_modal = $("#bankathon");
+  observer.observe(bankathon_modal[0], {
+    attributes: true
+  });
+
+  const handlerIn = () => {
+    $('#header_underline').removeClass('d-none');
+  };
+
+  const handlerOut = () => {
+    $('#header_underline').addClass('d-none');
+  };
+
+  $('#header_cv_click').hover( handlerIn, handlerOut );
 });
 
 const toggleModal = (modalId) => {
