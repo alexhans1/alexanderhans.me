@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon"
+        type="image/png"
+        href="static/favicon.png">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -22,7 +25,9 @@
 <body>
 
 
-<div id="header" class="mb-3"></div>
+<div id="header" class="mb-3">
+  <div class="clickDiv mt-5" onclick="toggleModal('#cv')"></div>
+</div>
 
 <div class="container-fluid">
 
@@ -300,25 +305,23 @@
     <div class="block block-container">
 
       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-      <!--TEXT-->
+      <!-------- CV -------->
       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
       <div id="block_5" class="block">
         <div class="clickDiv" onclick="toggleModal('#cv')"></div>
+      </div>
+      <div class="modal fade" id="cv" tabindex="-1"
+           role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-body d-flex flex-column">
 
-        <div class="modal fade" id="cv" tabindex="-1"
-             role="dialog" aria-hidden="true">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-body d-flex flex-column">
-
-                <img src="static/Alexander%20Hans%20CV_svg.svg" alt="">
-                <button type="button" class="btn btn-secondary ml-auto mt-4" data-dismiss="modal">Close</button>
-              </div>
+              <img src="static/Alexander%20Hans%20CV_svg.svg" alt="">
+              <button type="button" class="btn btn-secondary ml-auto mt-4" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
-
       </div>
 
       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -527,51 +530,52 @@
         crossorigin="anonymous"></script>
 
 <!--VIMEO CONTROLS-->
-<script src="https://player.vimeo.com/api/player.js"></script>
+<!--<script src="https://player.vimeo.com/api/player.js"></script>-->
 <script type="application/javascript">
 
 $(document).ready(function() {
-  const iframe = document.querySelector('iframe');
-  const player = new Vimeo.Player(iframe);
+  // const iframe = document.querySelector('iframe');
+  // const player = new Vimeo.Player(iframe);
 
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.attributeName === "class") {
-        const attributeValue = $(mutation.target).prop(mutation.attributeName);
-        if (
-          (attributeValue.includes('carousel-item') && !attributeValue.includes('active'))
-          || (attributeValue.includes('modal') && !attributeValue.includes('show'))
-        ) {
-          player.pause().then(function() {
-            console.info('the video was paused');
-          }).catch(function(error) {
-            switch (error.name) {
-              case 'PasswordError':
-                console.error('the video is password-protected and the viewer needs to enter the password first');
-                break;
-
-              case 'PrivacyError':
-                console.error('the video is private');
-                break;
-
-              default:
-                console.error('some other error occurred');
-                break;
-            }
-          });
-        }
-      }
-    });
-  });
-  const video = $("#bankathon_iframe_container");
-  observer.observe(video[0], {
-    attributes: true
-  });
-  const bankathon_modal = $("#bankathon");
-  observer.observe(bankathon_modal[0], {
-    attributes: true
-  });
   // listen to bankathon modal being closed or inactive
+  // pause video if so
+  // const observer = new MutationObserver(function(mutations) {
+  //   mutations.forEach(function(mutation) {
+  //     if (mutation.attributeName === "class") {
+  //       const attributeValue = $(mutation.target).prop(mutation.attributeName);
+  //       if (
+  //         (attributeValue.includes('carousel-item') && !attributeValue.includes('active'))
+  //         || (attributeValue.includes('modal') && !attributeValue.includes('show'))
+  //       ) {
+  //         player.pause().then(function() {
+  //           console.info('the video was paused');
+  //         }).catch(function(error) {
+  //           switch (error.name) {
+  //             case 'PasswordError':
+  //               console.error('the video is password-protected and the viewer needs to enter the password first');
+  //               break;
+  //
+  //             case 'PrivacyError':
+  //               console.error('the video is private');
+  //               break;
+  //
+  //             default:
+  //               console.error('some other error occurred');
+  //               break;
+  //           }
+  //         });
+  //       }
+  //     }
+  //   });
+  // });
+  // const video = $("#bankathon_iframe_container");
+  // observer.observe(video[0], {
+  //   attributes: true
+  // });
+  // const bankathon_modal = $("#bankathon");
+  // observer.observe(bankathon_modal[0], {
+  //   attributes: true
+  // });
 });
 
 const toggleModal = (modalId) => {
