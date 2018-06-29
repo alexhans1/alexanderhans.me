@@ -30,6 +30,18 @@ a:hover {
   background-size: cover;
 }
 
+#header > .clickDiv {
+  cursor: unset;
+  position: fixed;
+  width: 380px;
+  max-width: 80vw;
+  height: 430px;
+  margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
+  top: 30px;
+}
+
 #members_area_phone_image {
   height: 50%;
   width: auto;
@@ -132,7 +144,25 @@ a:hover {
   height: 250px;
 }
 
+@media screen and (max-height: 550px) {
+
+  #header > .clickDiv {
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+}
+
+@media screen and (max-height: 650px) {
+
+  #header > .clickDiv {
+    height: 300px;
+  }
+
+}
+
 @media screen and (max-width: 768px) {
+
   .block-container {
     width: 100% !important;
   }
@@ -157,6 +187,11 @@ a:hover {
 }
 
 @media screen and (min-width: 1201px) {
+
+  #header > .clickDiv {
+    width: 27vw;
+  }
+
   .block-container:last-child {
     height: 100%;
     display: flex;
