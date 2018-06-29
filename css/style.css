@@ -1,9 +1,29 @@
+html::-webkit-scrollbar
+{
+  background: #D9D9D9; /* For browsers that do not support gradients */
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-thumb
+{
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.25);
+}
+
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: #595659;
+}
+
 /*-------------------------*/
 /*--------- HEADER---------*/
 /*-------------------------*/
 #header {
   min-height: 100vh;
-  background: url(../images/header-background_2592x1463.png) no-repeat center center fixed;
+  background: url(../images/header-background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,6 +35,14 @@
   width: auto;
   margin-top: 160px;
   cursor: pointer;
+}
+
+/*-------------------------*/
+/*--------- FOOTER---------*/
+/*-------------------------*/
+#footer {
+  padding: 1rem 0 0 0;
+  border-top: #bababa 1px solid;
 }
 
 /*-------------------------*/
@@ -52,7 +80,7 @@
 }
 
 #block_2 {
-  background: url("../images/PSD2_writing.png") no-repeat center center;
+  background: url("../images/PSD2_writing.jpg") no-repeat center center;
   background-size: cover;
   height: 500px;
 }
@@ -65,17 +93,19 @@
 }
 
 #block_4 {
-  background: url("../images/lissajous_2666x1500.png") no-repeat center center;
+  background: url("../images/lissajous.jpg") no-repeat center center;
   background-size: cover;
   background-color: #EDE6DE;
   height: 250px;
 }
 
 #block_5 {
+  background: url("../images/about_me.jpg") no-repeat center center;
+  background-size: cover;
   background-color: #ffffff;
   height: 250px;
 }
-#block_5 > p {
+#block_5 > div > p {
   font-size: 1.5rem;
 }
 
@@ -96,7 +126,7 @@
 }
 
 #block_8 {
-  background: url("../images/alexa_small.png") no-repeat center center;
+  background: url("../images/alexa.png") no-repeat center center;
   background-size: cover;
   background-color: #F0E7E2;
   height: 250px;
@@ -107,8 +137,12 @@
     width: 100% !important;
   }
 
-  #block_4 {
+  #block_3, #block_4, #block_7 {
     height: 400px;
+  }
+
+  #block_6 {
+    height: 500px;
   }
 
   #block_5 {
@@ -151,6 +185,24 @@
 /*-------------------------*/
 /*--------- CONTENT--------*/
 /*-------------------------*/
+
+.carousel-item {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.carousel-item::-webkit-scrollbar
+{
+  background: #D9D9D9; /* For browsers that do not support gradients */
+  border-radius: 20px;
+  width: 0.3rem;
+}
+
+.carousel-item::-webkit-scrollbar-thumb
+{
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.25);
+}
 
 #bankathon_iframe_container.active {
   display: flex;
