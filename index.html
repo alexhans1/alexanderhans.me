@@ -32,11 +32,9 @@
 <body>
 
 
-<div id="header" class="mb-3">
-  <div id="header_cv_click" class="clickDiv mt-5" onclick="toggleModal('#cv')"></div>
-
+<div id="header" class="mb-3" onclick="toggleModal('#cv')" style="cursor: pointer;">
   <div class="modal fade" id="cv" tabindex="-1"
-       role="dialog" aria-hidden="true">
+       role="dialog" aria-hidden="true" style="cursor: auto;">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-body d-flex flex-column">
